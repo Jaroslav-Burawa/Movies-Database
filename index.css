@@ -1,0 +1,364 @@
+/* FONT RALEWAY */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&display=swap');
+/* FONT CINZEL */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&display=swap');
+
+*, *::before, * ::after {
+    box-sizing: inherit;
+    /* border:1px solid red; */
+}
+/* THIS IS RULE FOR REMOVING BLUE HIGHLIGHT EFFECT FROM THE PHONE VIEW AFTER CLICKING ON ELEMENTS */
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+html {
+    box-sizing: border-box;
+    font-size: 100%;
+    color: #D5D4D8;
+    font-family: 'Raleway', sans-serif;
+    }
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--background-violet);
+}
+a {
+    text-decoration: none;
+    color: var(--font-color);
+}
+/* CSS VARIABLES */
+:root {
+    --font-color: #D5D4D8;
+    --font-violet: #aca3c7;
+    --background-violet: #3b3255;
+    --background-violet-dark: #171130;
+    --background-brick: #ec9052;
+    --background-brick-hover: #fb9f61;
+}
+::selection {
+    background-color:var(--background-brick);
+    color: var(--font-color);
+ }
+/* ----------------------------------------------------------
+    HEADER AND MENU
+------------------------------------------------------------- */
+header {
+    padding:0.1em 1.5em 0.1em 1.5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--background-violet);
+    background: -webkit-linear-gradient(to right, var(--background-violet-dark), var(--background-violet));  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right,var(--background-violet-dark), var(--background-violet)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-bottom: 2px solid var(--font-violet);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+#main-nav-wide {
+    display: none;
+}
+#main-nav-hamburger {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-violet-dark);
+    opacity: 0.9;
+    z-index: 1;
+    margin-top: 4em;
+    padding-top: 1em;
+    user-select: none;
+}
+#main-nav-hamburger a {
+    font-size: 1.5rem;
+    padding-right: 2em;
+}
+#main-nav-hamburger i {
+    padding-right: 0.5em;
+}
+#main-nav-hamburger.active {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+#hamburger-element {
+    cursor: pointer;
+    z-index: 999;
+}
+.bar {
+    width: 30px;
+    height: 3px;
+    background-color: var(--font-violet);
+    margin: 5px 0;
+    border-radius: 4px;
+}
+.bar-active {
+    background-color: var(--background-brick);
+}
+#main-nav-hamburger a:hover {
+    cursor: pointer;
+    color: var(--background-brick-hover);
+}
+#main-nav-hamburger i {
+    color: var(--font-violet);
+}
+/* ----------------------------------------------------------
+    TITLE
+------------------------------------------------------------- */
+#page-title {
+    color: var(--font-violet);
+    font-family: 'Cinzel', serif;
+    letter-spacing: 1.5px;
+}
+#find {
+    border-bottom: 5px solid var(--font-violet);
+    color: var(--background-brick);
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 55vh;
+}
+.main-watchlist {
+    height: 20vh;
+}
+.main h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+#logo {
+    width: 1rem;
+    border-radius: 50%;
+    transform: scale(2.5);
+    margin-right: 0.8em;
+    opacity: 0.85;
+}
+/* ----------------------------------------------------------
+    SEARCH BAR
+------------------------------------------------------------- */
+#search-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+#search-input {
+    padding: 0.5em;
+    height: 2.5em;
+    width: 270px;
+    border: none;
+    border-radius: 5px;
+}
+#search-btn {
+    background-color: var(--background-brick);
+    height: 2.5em;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: 500;
+}
+#search-btn:hover {
+    background-color: var(--background-brick-hover);
+    cursor: pointer;
+}
+/* ----------------------------------------------------------
+    LOADING SPINNER
+------------------------------------------------------------- */
+#loader {
+    width: 42px;
+    height: 42px;
+    border: 5px solid var(--background-brick);
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: none;
+    margin: auto;
+    animation: rotation 1s linear infinite;
+    }
+    @keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+    } 
+/* ----------------------------------------------------------
+    SEARCH RESULTS
+------------------------------------------------------------- */
+.result-box {
+    width: 90%;
+    max-width: 800px;
+    margin: auto;
+    padding: 1.5em 1.5em 0.5em 1.5em;
+    margin-bottom: 1.5em;
+    background: var(--background-violet);
+    background: -webkit-linear-gradient(to right, #393054 #4e436e);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #3b3255, #4e436e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-radius: 5px;
+    border: 1px solid #4e436e;
+}
+.movie-card {
+    display: flex;
+    gap: 1.5em;
+    padding-bottom: 1em;
+}
+.movie-image img {
+    width: 20vw;
+    max-width: 140px;
+    border-radius: 5px;
+    transition: transform 0.3s;
+}
+.movie-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0.8em;
+}
+.movie-title {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.6em;
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+#imdb-logo {
+    width: 30px;
+}
+.movie-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    font-weight: bold;
+    align-items: baseline;
+
+}
+.add-to-watchlist:hover {
+    cursor: pointer;
+    color: var(--background-brick-hover);
+}
+.movie-plot,
+#year,
+#country,
+#rating {
+    color: var(--font-violet);
+    padding-right: 0.3em;
+}
+#genre {
+    font-size: 1rem;
+}
+.movie-poster:hover {
+    transform: scale(1.1);
+}
+/* NOTIFICATION FOR ADDING TO WATCHLIST */
+#add-notification {
+    display: none;
+    position: fixed;
+    top:0;
+    z-index: 9999;
+    padding: 1em;
+    background-color: var(--font-color);
+    border-radius: 5px;
+    color: green;
+    font-weight: bold;
+    border: 2px solid green;
+}
+/* ----------------------------------------------------------
+    TOP 10 EDITED BOILERPLATE
+------------------------------------------------------------- */
+.top-ten-number {
+    font-size: 2rem;
+    text-align: center;
+    padding-bottom: 0.5em;
+    font-weight: 800;
+}
+.top-ten-number-wide {
+    display: none;
+}
+/* ----------------------------------------------------------
+    NO RESULTS
+------------------------------------------------------------- */
+#no-result {
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--font-violet);
+}
+/* ----------------------------------------------------------
+    WATCHLIST
+------------------------------------------------------------- */
+.remove-from-watchlist {
+    color: var(--font-color);
+}
+.remove-from-watchlist:hover {
+    cursor: pointer;
+    color: var(--background-brick-hover);
+}
+#remove-notification {
+    display: none;
+    position: fixed;
+    top:0;
+    z-index: 9999;
+    padding: 1em;
+    background-color: var(--font-color);
+    border-radius: 5px;
+    color: red;
+    font-weight: bold;
+    border: 2px solid red;
+}
+/* ----------------------------------------------------------
+    OUR PICKS
+------------------------------------------------------------- */
+#our-picks-subtitle {
+    text-align: center;
+    padding: 1em;
+    background: linear-gradient(to right, #3b3255, #171130, #3b3255);
+    color: var(--font-violet);
+    line-height: 1.5;
+}
+/* ----------------------------------------------------------
+    MEDIA QUERIES
+------------------------------------------------------------- */
+@media screen and (min-width:770px) {
+    .main h1 {
+        font-size: 3.5rem;
+    }
+    #hamburger-element {
+        display: none;
+    }
+    #main-nav-wide {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5em;
+    }
+    #main-nav-wide a:hover {
+        cursor: pointer;
+        color: var(--background-brick-hover);
+    }
+    #main-nav-wide i {
+        color: var(--font-violet);
+    }
+    #search-bar {
+        flex-direction: row;
+    }
+    #search-input {
+        width: 330px;
+        border-radius: 5px 0px 0px 5px;
+    }
+    #search-btn {
+        width: 100px;
+        border-radius: 0px 5px 5px 0px;
+    }
+    #search-bar {
+        gap: 0;
+    }
+    .top-ten-number {
+        display: none;
+    }
+    .top-ten-number-wide {
+        display: inline;
+    }
+}
